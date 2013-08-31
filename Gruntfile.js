@@ -1,3 +1,4 @@
+
 // Generated on 2013-08-31 using generator-angular 0.4.0
 'use strict';
 var LIVERELOAD_PORT = 35729;

@@ -1,9 +1,19 @@
-<div class="hero-unit">
-  <h1>'Allo, 'Allo!</h1>
-  <p>You now have</p>
-  <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
-  </ul>
-  <p>installed.</p>
-  <h3>Enjoy coding! - Yeoman</h3>
+<div class="row-fluid">
+	<div class="span4">
+    <h3>Shopping list</h3>
+    <button ng-click="addTop()">Add</button>
+	</div>
+</div>
+
+<div class="row-fluid" ng-repeat="thing in awesomeThings">
+	<div class="span4">
+    <input ng-model="thing.name"></input>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="span4">
+    <button ng-click="addBottom()">Add</button>
+    <pre>{{pretty()}}</pre>
+  </div>
 </div>

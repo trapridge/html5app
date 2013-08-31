@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('html5appApp', [])
+angular.module('html5app', [
+    'ngRoute'
+  ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

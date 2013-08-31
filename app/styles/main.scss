@@ -2,12 +2,14 @@ $iconSpritePath: "../images/glyphicons-halflings.png";
 $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
 @import "bootstrap-sass/lib/bootstrap";
+@import "bootstrap-sass/lib/responsive";
 
 /* Put your CSS here */
 html, body {
   margin: 20px;
 }
 
+/*
 body {
     background: #fafafa;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -29,4 +31,13 @@ body {
     font-size: 60px;
     line-height: 1;
     letter-spacing: -1px;
+}
+*/
+
+.row-fluid {
+    border: 1px solid black;
+}
+
+pre {
+    font-size: .8em;
 }

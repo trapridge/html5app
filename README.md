@@ -8,3 +8,12 @@ To start developing:
  `npm install && bower install`
 
  `grunt server`
+
+TODO:
+
+ * reordering
+  * drag&drop
+ * categorization
+ * hook up with a categorization api
+ * lists management
+ * visuals 

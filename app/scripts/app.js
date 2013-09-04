@@ -1,7 +1,9 @@
 'use strict';
 
 angular.module('html5app', [
-    'ngRoute'
+    'ngRoute',
+    'ngTouch',
+    'ngAnimate'
   ])
   .config(function ($routeProvider) {
     $routeProvider

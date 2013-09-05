@@ -24,6 +24,16 @@ angular.module('html5app')
     	$scope.listItems.push({ name: 'test'+ (++counter), focusMe: true });
     }
 
+    $scope.move = function(oldIndex, newIndex) {
+
+      if(newIndex >= 0 && newIndex < $scope.listItems.length) {
+        var temp = $scope.listItems[oldIndex];
+        $scope.listItems[oldIndex] = $scope.listItems[newIndex];
+        $scope.listItems[newIndex] = temp;
+      }
+
+    }
+
     $scope.shop = function(index) {
       if($scope.listItems[index].shopped !== 'shopped') {
         $scope.listItems[index].shopped = 'shopped';
@@ -45,20 +55,4 @@ angular.module('html5app')
     $scope.remove = function(index) {
       $scope.listItems.splice(index, 1);      
     }
-  })
-
-  .directive('focusable-item', function($timeout) {
-    return {
-        restrict: 'A',
-        link: function(scope, element, attrs) {
-            if(scope.item.focusMe) {
-
-              $timeout(function() {
-                scope.$apply(jQuery(element).find('input').focus());
-              }, 0);
-
-              delete scope.thing.focusMe;
-            }
-        }
-    }
-});
+  });

@@ -8,7 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <!--<meta name="viewport" content="width=device-width">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <!-- build:css(.tmp) styles/main.css -->
@@ -40,6 +41,14 @@
     </script>
 
     <script src="bower_components/jquery/jquery.js"></script>
+    <!--
+    <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+-->
+    <script src="bower_components/jquery-ui/ui/jquery.ui.core.js"></script>
+    <script src="bower_components/jquery-ui/ui/jquery.ui.widget.js"></script>
+    <script src="bower_components/jquery-ui/ui/jquery.ui.mouse.js"></script>
+    <script src="bower_components/jquery-ui/ui/jquery.ui.sortable.js"></script>
+    <script src="bower_components/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
     <script src="bower_components/angular/angular.js"></script>
 
     <!-- build:js scripts/plugins.js -->
@@ -65,6 +74,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-ui-sortable/src/sortable.js"></script>
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
@@ -72,6 +82,7 @@
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/animations/slide.js"></script>
     <script src="scripts/directives/focusable-item.js"></script>
+    <script src="scripts/directives/dnd-list.js"></script>
     <!-- endbuild -->
 
 </body>

@@ -1,14 +1,12 @@
 'use strict';
 
 angular.module('html5app')
-  
   .animation('.slide', function() {
 
-	var duration = 150;
+	 var duration = 180;
 
     return {
-      enter: function(element, done) {
-
+      enter: function(element, parent, after, done) {
         element.hide();
         jQuery(element).slideDown(duration, done);
 
@@ -18,7 +16,7 @@ angular.module('html5app')
           }
         }
       },
-      leave: function(element, done) {
+      leave: function(element, parent, after, done) {
         jQuery(element).slideUp(duration, done);
 
         return function(cancelled) {
@@ -27,7 +25,19 @@ angular.module('html5app')
           }
         }
       },
-      // move: function(element, done) { },
+      /*
+      move: function(element, parent, after, done) {
+        element.hide();
+        // after.hide();
+        jQuery(element).fadeIn(duration, done);
+
+        return function(cancelled) {
+          if(cancelled) {
+            jQuery(element).stop();
+          }
+        }
+      },
+      */
       // show: function(element, done) { },
       // hide: function(element, done) { },
       // addClass: function(element, className, done) { },

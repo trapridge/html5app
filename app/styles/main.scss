@@ -82,3 +82,34 @@ pre {
 .shopped {
   text-decoration: line-through;
 }
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+li {
+  padding: .2em;
+  margin: .2em;
+  border: 1px dotted grey;
+}
+
+.odd {
+  background-color: green;
+}
+
+.even {
+  background-color: yellow;
+}
+
+input {
+  background-color: yellow;
+  border: 0;
+  outline: 0;
+  font-size: 2em;
+}
+
+input:focus {
+  border: 1px solid orange;
+}

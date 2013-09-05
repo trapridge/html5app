@@ -3,7 +3,8 @@
 angular.module('html5app', [
     'ngRoute',
     'ngTouch',
-    'ngAnimate'
+    'ngAnimate',
+    'ui.sortable'
   ])
   .config(function ($routeProvider) {
     $routeProvider

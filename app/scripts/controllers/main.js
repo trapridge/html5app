@@ -4,6 +4,8 @@ angular.module('html5app')
   
   .controller('MainCtrl', function ($scope, $timeout) {
 
+    var sortableEle;
+
     var counter = 0;
 
     $scope.listItems = [
@@ -14,14 +16,17 @@ angular.module('html5app')
 
     $scope.addTop = function() {
     	$scope.listItems.unshift({ name: 'test' + (++counter), focusMe: true });
+      sortableEle.sortable('refresh');
     }
 
     $scope.addMiddle = function(index) {
       $scope.listItems.splice(++index, 0, { name: 'test' + (++counter), focusMe: true });
+      sortableEle.sortable('refresh');
     }
 
     $scope.addBottom = function() {
     	$scope.listItems.push({ name: 'test'+ (++counter), focusMe: true });
+      sortableEle.sortable('refresh');
     }
 
     $scope.move = function(oldIndex, newIndex) {
@@ -30,6 +35,7 @@ angular.module('html5app')
         var temp = $scope.listItems[oldIndex];
         $scope.listItems[oldIndex] = $scope.listItems[newIndex];
         $scope.listItems[newIndex] = temp;
+        sortableEle.sortable('refresh');
       }
 
     }
@@ -53,6 +59,31 @@ angular.module('html5app')
     }
 
     $scope.remove = function(index) {
-      $scope.listItems.splice(index, 1);      
+      $scope.listItems.splice(index, 1);
+
+      sortableEle.sortable('refresh');
+
     }
+
+    $scope.dragStart = function(e, ui) {
+        ui.item.data('start', ui.item.index());
+    }
+    $scope.dragEnd = function(e, ui) {
+
+      //console.log('weird');
+        var start = ui.item.data('start'),
+            end = ui.item.index();
+        
+        $scope.listItems.splice(end, 0, 
+            $scope.listItems.splice(start, 1)[0]);
+        
+        $scope.$apply();
+    }
+        
+    sortableEle = jQuery('#sortable').sortable({
+      start: $scope.dragStart,
+      update: $scope.dragEnd,
+      axis: 'y'
+    });
+
   });

@@ -6,7 +6,7 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
 /* Put your CSS here */
 html, body {
-  margin: 20px;
+  /*margin: 20px;*/
 }
 
 /*
@@ -34,9 +34,6 @@ body {
 }
 */
 
-.row-fluid {
-    border: 1px solid black;
-}
 
 pre {
     font-size: .8em;
@@ -83,33 +80,23 @@ pre {
   text-decoration: line-through;
 }
 
-ul {
-    list-style: none;
-    padding-left: 0;
-    margin-left: 0;
+#sortable {
+  margin: 0;
+  padding: 0;
 }
 
-li {
-  padding: .2em;
-  margin: .2em;
-  border: 1px dotted grey;
+#sortable div {
+  margin: 0;
+  padding: 0;
 }
 
-.odd {
-  background-color: green;
-}
-
-.even {
-  background-color: yellow;
+#sortable > li {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 input {
-  background-color: yellow;
-  border: 0;
-  outline: 0;
-  font-size: 2em;
-}
-
-input:focus {
-  border: 1px solid orange;
+  -webkit-border-radius:0px;
+  
 }

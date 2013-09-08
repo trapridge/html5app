@@ -1,35 +1,37 @@
-<div class="row-fluid">
-	<div class="span4">
-    <!--<h3>Shopping list</h3>-->
-    <button ng-click="addTop()">Add</button>
-	</div>
-</div>
+
+
+    <!-- slide -->
+    <!-- input-block-level -->
+    <!--<ul ui-sortable="{ axis: 'y', cancel: 'input,button' }" ng-model="listItems">-->
 
 <div class="row-fluid">
-	<div class="span4">
-    <!--<ul ui-sortable="{ axis: 'y', cancel: 'input,button' }" ng-model="listItems">-->
-    <ul id="sortable">
-      <!-- slide -->
-      <li class="" ng-repeat="item in listItems">
-        <button type="button" ng-click="shop($index)">s</button>
-        <!-- focusable-item -->
-        <input ng-class="item.shopped" ng-model="item.name" focusable-item></input>
-        <button type="button" ng-click="remove($index)">x</button>
-        <button type="button" ng-click="addMiddle($index)">+</button>
-        <!--
-        <button type="button" ng-disabled="$index===0" ng-click="move($index, $index-1)">&#8593;</button>
-        <button type="button" ng-disabled="$index>=listItems.length-1"ng-click="move($index, $index+1)">&#8595;</button>
-      -->
+  <div class="span12" style="text-align: center;">
+    <pre>Ultimate Shopping List</pre>
+    <ul id="sortable" style="display: inline-block;" >
+      <li ng-repeat="item in listItems" ng-swipe-right="remove($index)" style="">
+        <div class="input-append input-prepend" style="margin-bottom: 2px;">
+          <button class="btn" type="button" ng-click="shop($index)"><i class="icon-check"></i></button>
+          <input placeholder="Item" type="text" ng-class="item.shopped" class="input-small" ng-model="item.name" focusable-item></input>
+          <button class="btn" type="button" ng-click="remove($index)"><i class="icon-remove"></i></button>
+          <button class="btn" type="button" ng-click="addMiddle($index)"><i class="icon-plus"></i></button>
+          <span class="add-on handle"><i class="icon-hand-up"></i></button>
+        </div>    
+        <br/>
       </li>
     </ul>
   </div>
 </div>
 
-<div class="row-fluid">
-  <div class="span4">
+        <!--
+        <button type="button" ng-disabled="$index===0" ng-click="move($index, $index-1)">&#8593;</button>
+        <button type="button" ng-disabled="$index>=listItems.length-1"ng-click="move($index, $index+1)">&#8595;</button>
+        -->
+
 <!--
+<div class="row-fluid">
+  <div class="span12">
     <button ng-click="addBottom()">Add</button>
--->
     <pre>{{pretty()}}</pre>
   </div>
 </div>
+-->

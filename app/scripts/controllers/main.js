@@ -15,17 +15,17 @@ angular.module('html5app')
     ];
 
     $scope.addTop = function() {
-    	$scope.listItems.unshift({ name: 'test' + (++counter), focusMe: true });
+    	$scope.listItems.unshift({ /*name: 'test' + (++counter), focusMe: true*/ });
       sortableEle.sortable('refresh');
     }
 
     $scope.addMiddle = function(index) {
-      $scope.listItems.splice(++index, 0, { name: 'test' + (++counter), focusMe: true });
+      $scope.listItems.splice(++index, 0, { /*name: 'test' + (++counter), focusMe: true*/ });
       sortableEle.sortable('refresh');
     }
 
     $scope.addBottom = function() {
-    	$scope.listItems.push({ name: 'test'+ (++counter), focusMe: true });
+    	$scope.listItems.push({ /*name: 'test'+ (++counter), focusMe: true*/ });
       sortableEle.sortable('refresh');
     }
 
@@ -83,7 +83,20 @@ angular.module('html5app')
     sortableEle = jQuery('#sortable').sortable({
       start: $scope.dragStart,
       update: $scope.dragEnd,
-      axis: 'y'
+      axis: 'y',
+      opacity: 0.5,
+      //cancel: "button, input, li",
+      //handle: ".handle"
     });
+
+    sortableEle.bind('click.sortable mousedown.sortable',function(ev){
+      ev.target.focus();
+//       if ($(touch.target).is("input") || $(touch.target).is("textarea")) {
+//         ev.stopPropagation();
+//       } else {
+//         ev.preventDefault();
+// }
+    });
+
 
   });

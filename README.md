@@ -3,19 +3,31 @@ html5app
 
 To start developing:
 
- * Clone repo
-  `git clone https://github.com/trapridge/html5app.git` 
- * Install Ruby (with package manager preferrably)
- * Install Compass  (with package manager preferrably)
-  `gem update --system`
-  `gem install compass`
- * Install node.js (with NPM)
+ * Clone repo, e.g.
+
+ `git clone https://github.com/trapridge/html5app.git` 
+
+ * Install node.js (with NPM) 
+
+ * Install Ruby
+
+ * Install Compass
+
+ `gem update --system`
+
+ `gem install compass`
+
  * Install dev tools
-  `npm install -g grunt-cli bower`
+
+ `npm install -g grunt-cli bower`
+
  * Install assets
-  `npm install && bower install`
+
+ `npm install && bower install`
+
  * Run dev server
-  `grunt server`
+
+ `grunt server`
 
 TODO:
 
